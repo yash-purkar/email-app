@@ -9,7 +9,6 @@ import { EmailDetail } from './Pages/EmailDetail';
 import { SpamMailDetail } from './Pages/SpamMailDetail';
 import { TrashMailDetail } from './Pages/TrashMailDetail';
 
-// TODO REMOVE BUTTONS FROM PAGES
 
 export default function App() {
   return (
