@@ -3,12 +3,12 @@ import { MailState } from '../Contexts/MailContext';
 import { SingleMail } from '../Components/SingleMail';
 export const Inbox = () => {
   const {
-    state: { mailsData, checkboxes },
+    state: { mailsCopy, checkboxes },
     dispatch,
   } = MailState();
 
   const trasnsFormData = () => {
-    let filteredData = [...mailsData];
+    let filteredData = [...mailsCopy];
     if (checkboxes.length > 0) {
       filteredData = filteredData.filter((item) =>
         checkboxes.every((elem) => item[elem])
@@ -52,7 +52,7 @@ export const Inbox = () => {
 
       <ul className="mail-display">
         {filteredData.map((mail) => (
-          <SingleMail mail={mail} key={mail.mId} inbox allButtons/>
+          <SingleMail mail={mail} key={mail.mId} inbox allButtons />
         ))}
       </ul>
     </div>

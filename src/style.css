@@ -156,6 +156,12 @@ p {
   color: #434343;
 }
 
+.empty-heading {
+  color: lightgray;
+  text-align: center;
+  letter-spacing: 1px;
+}
+
 /* for tablets */
 @media (min-width: 600px) {
   p {

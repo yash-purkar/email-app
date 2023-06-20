@@ -17,6 +17,9 @@ export const Trash = () => {
           </>
         ))}
       </ul>
+      {
+        trashMails?.length === 0 && <h2 className="empty-heading">Nothing In Trash</h2>
+      }
     </>
   );
 };

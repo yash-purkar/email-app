@@ -10,7 +10,7 @@ export const reducer = (state, action) => {
     case 'STAR_UNSTAR':
       return {
         ...state,
-        mailsData: state.mailsData.map((item) =>
+        mailsCopy: state.mailsCopy.map((item) =>
           item.mId === action.payload
             ? { ...item, isStarred: !item.isStarred }
             : item
@@ -20,7 +20,7 @@ export const reducer = (state, action) => {
     case 'DELETE_MAIL':
       return {
         ...state,
-        mailsData: state.mailsData.filter(
+        mailsCopy: state.mailsCopy.filter(
           ({ mId }) => mId !== action.payload.mId
         ),
         trashMails: [...state.trashMails, action.payload],
@@ -29,7 +29,7 @@ export const reducer = (state, action) => {
     case 'READ_UNREAD':
       return {
         ...state,
-        mailsData: state.mailsData.map((item) =>
+        mailsCopy: state.mailsCopy.map((item) =>
           item.mId === action.payload ? { ...item, unread: !item.unread } : item
         ),
       };
@@ -37,7 +37,7 @@ export const reducer = (state, action) => {
     case 'REPORT_SPAM':
       return {
         ...state,
-        mailsData: state.mailsData.filter(
+        mailsCopy: state.mailsCopy.filter(
           ({ mId }) => mId !== action.payload.mId
         ),
         spamMails: [...state.spamMails, action.payload],

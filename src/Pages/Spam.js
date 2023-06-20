@@ -15,6 +15,9 @@ export const Spam = () => {
           <SingleMail mail={mail} key={mail.mId} spam />
         ))}
       </ul>
+      {
+        spamMails?.length === 0 && <h2 className="empty-heading">Nothing In Spam</h2>
+      }
     </>
   );
 };
